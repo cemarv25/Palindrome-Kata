@@ -48,7 +48,7 @@ PalindromeValidator validator = new PalindromeValidator();
 	}
 
 	@Test
-	void given3LetterWord_whenValidatingPalindrome_thenTrue() {
+	void given3LetterPalindromeWord_whenValidatingPalindrome_thenTrue() {
 		// Given
 		String string = "ada";
 		
@@ -57,6 +57,34 @@ PalindromeValidator validator = new PalindromeValidator();
 		
 		// Then
 		boolean expectedResult = true;
+		assertEquals(expectedResult, actualResult);
+		
+	}
+	
+	@Test
+	void given4LetterPalindromeWord_whenValidatingPalindrome_thenTrue() {
+		// Given
+		String string = "adda";
+		
+		// When
+		boolean actualResult = validator.validate(string);
+		
+		// Then
+		boolean expectedResult = true;
+		assertEquals(expectedResult, actualResult);
+		
+	}
+	
+	@Test
+	void given4LetterNonPalindromeWord_whenValidatingPalindrome_thenFalse() {
+		// Given
+		String string = "adna";
+		
+		// When
+		boolean actualResult = validator.validate(string);
+		
+		// Then
+		boolean expectedResult = false;
 		assertEquals(expectedResult, actualResult);
 		
 	}
