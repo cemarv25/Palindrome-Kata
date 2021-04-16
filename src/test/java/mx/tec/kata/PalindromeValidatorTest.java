@@ -18,4 +18,33 @@ PalindromeValidator validator = new PalindromeValidator();
 		boolean expectedResult = true;
 		assertEquals(expectedResult, actualResult);
 	}
+	
+	@Test
+	void given2DifferentLettersString_whenValidatingPalindrome_thenFalse() {
+		// Given
+		String string = "ab";
+		
+		// When
+		boolean actualResult = validator.validate(string);
+		
+		// Then
+		boolean expectedResult = false;
+		assertEquals(expectedResult, actualResult);
+		
+	}
+	
+	@Test
+	void given2EqualLettersString_whenValidatingPalindrome_thenTrue() {
+		// Given
+		String string = "aa";
+		
+		// When
+		boolean actualResult = validator.validate(string);
+		
+		// Then
+		boolean expectedResult = true;
+		assertEquals(expectedResult, actualResult);
+		
+	}
+
 }
